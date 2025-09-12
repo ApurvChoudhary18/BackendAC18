@@ -1,0 +1,9 @@
+pandas
+pyarrow
+scikit-learn
+fastapi
+uvicorn
+pydantic
+apscheduler
+httpx
+python-dotenv

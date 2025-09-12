@@ -1,0 +1,27 @@
+{"id":"d1","source":"discord","actor":"other","timestamp":"2025-08-20T09:00:00Z","thread_id":"t-42","text":"can you review the PR by EOD?"}
+{"id":"g1","source":"github","actor":"you","timestamp":"2025-08-20T09:10:00Z","thread_id":"t-42","text":"pushed fixes for auth"}
+{"id":"m1","source":"gmail","actor":"other","timestamp":"2025-08-20T18:30:00Z","thread_id":"t-42","text":"any update?"}
+
+{"id":"t1-m1","source":"gmail","actor":"other","timestamp":"2025-08-22T06:45:00Z","thread_id":"t1","text":"can you review the PR by EOD?"}
+{"id":"t1-m2","source":"github","actor":"you","timestamp":"2025-08-22T06:55:00Z","thread_id":"t1","text":"pushed latest fixes, will review now"}
+{"id":"t1-m3","source":"gmail","actor":"other","timestamp":"2025-08-22T07:10:00Z","thread_id":"t1","text":"any update?"}
+
+{"id":"t2-m1","source":"discord","actor":"other","timestamp":"2025-08-21T15:00:00Z","thread_id":"t2","text":"could you please check the failing tests?"}
+{"id":"t2-m2","source":"github","actor":"you","timestamp":"2025-08-21T15:20:00Z","thread_id":"t2","text":"looking into it"}
+{"id":"t2-m3","source":"discord","actor":"other","timestamp":"2025-08-22T06:30:00Z","thread_id":"t2","text":"status?"}
+
+{"id":"tU-1","source":"gmail","actor":"other","timestamp":"2025-08-22T01:40:00Z","thread_id":"tU","text":"need the report ASAP"}
+{"id":"tU-2","source":"discord","actor":"you","timestamp":"2025-08-22T01:50:00Z","thread_id":"tU","text":"on it"}
+{"id":"tU-3","source":"gmail","actor":"other","timestamp":"2025-08-22T02:20:00Z","thread_id":"tU","text":"any update by EOD?"}
+
+{"id":"tF-1","source":"gmail","actor":"other","timestamp":"2025-08-19T06:00:00Z","thread_id":"tF","text":"please share the logs"}
+{"id":"tF-2","source":"discord","actor":"you","timestamp":"2025-08-19T06:10:00Z","thread_id":"tF","text":"will send later today"}
+{"id":"tF-3","source":"gmail","actor":"other","timestamp":"2025-08-19T06:20:00Z","thread_id":"tF","text":"waiting"}
+
+{"id":"tFUp-1","source":"gmail","actor":"other","timestamp":"2025-08-20T06:00:00Z","thread_id":"tFUp","text":"please check when you can"}
+{"id":"tFUp-2","source":"discord","actor":"you","timestamp":"2025-08-20T06:10:00Z","thread_id":"tFUp","text":"will do"}
+{"id":"tFUp-3","source":"gmail","actor":"other","timestamp":"2025-08-21T06:20:00Z","thread_id":"tFUp","text":"ping"}
+
+{"id":"tSUM-1","source":"github","actor":"other","timestamp":"2025-08-22T09:00:00Z","thread_id":"tSUM","text":"closes #123 after merge"}
+{"id":"tSUM-2","source":"github","actor":"you","timestamp":"2025-08-22T09:05:00Z","thread_id":"tSUM","text":"merged"}
+{"id":"tSUM-3","source":"github","actor":"other","timestamp":"2025-08-22T09:15:00Z","thread_id":"tSUM","text":"resolved #123, thanks"}
