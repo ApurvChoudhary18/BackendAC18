@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 from fastapi import Body
 from backend.app.services.scheduler import get_last_events
 
-
 from fastapi import APIRouter
 
 # --- Load .envs ---
@@ -39,6 +38,16 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Medium router (add after CORS middleware / app = FastAPI(...))
+try:
+    from backend.app.api.medium_routes import router as medium_router
+    app.include_router(medium_router, prefix="/api/medium")
+    print("[startup] medium router mounted at /api/medium")
+except Exception as _e:
+    import traceback
+    print("[startup] medium router NOT mounted:", str(_e))
+    traceback.print_exc()
 
 MODEL: Optional[AIStub] = None
 READY = False
@@ -243,9 +252,6 @@ def poll_stats():
 
 @app.get("/inbox")
 def inbox():
-    """
-    FE ko latest fetched items (gmail/discord/github) dene ke liye.
-    """
     return get_last_events()
 
 class DraftFromThreadIn(BaseModel):
@@ -256,7 +262,7 @@ class DraftFromThreadIn(BaseModel):
 
 class DraftFreeIn(BaseModel):
     source: Literal["gmail", "discord", "github"]
-    messages: List[dict]  # each: {actor, text, ts?}
+    messages: List[dict]
     max_words: int = 180
     model: Optional[str] = None
 
@@ -334,13 +340,12 @@ class SendGmailIn(BaseModel):
     subject: str
     body: str
     thread_id: str | None = None
-    in_reply_to: str | None = None  # optional message-id if available
+    in_reply_to: str | None = None
 
 class SendDiscordIn(BaseModel):
     channel_id: str
     content: str
 
-# ---- SEND: Gmail ----
 @app.post("/send/gmail")
 def send_gmail_endpoint(inp: SendGmailIn):
     from backend.app.services import gmail_services
@@ -356,7 +361,6 @@ def send_gmail_endpoint(inp: SendGmailIn):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Gmail send failed: {e}")
 
-# ---- SEND: Discord ----
 @app.post("/send/discord")
 def send_discord_endpoint(inp: SendDiscordIn):
     import os, requests, json
@@ -373,4 +377,3 @@ def send_discord_endpoint(inp: SendDiscordIn):
         raise HTTPException(status_code=500, detail=f"Discord send failed: {r.status_code} {r.text}")
 
     return {"ok": True, "message_id": r.json().get("id")}
-
