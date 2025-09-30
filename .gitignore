@@ -33,6 +33,14 @@ client_secret*.json
 client_secret.json
 
 .env
+.env.*
+.env.bak
+.env.save
+client_secret.json
+client_secret_*.json
+
+
+.env
 .env.bak
 .env.save
 .env.*
