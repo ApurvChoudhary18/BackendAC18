@@ -1,3 +1,33 @@
 node_modules/
 .venv/
 __pycache__/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual env
+.venv/
+env/
+venv/
+
+# Environment / secrets
+.env
+*.env
+
+# Logs
+*.log
+
+# Storage / models
+backend/storage/
+
+# local env backups & secrets
+.env.bak
+.env.save
+.env.*
+client_secret*.json
+client_secret.json
