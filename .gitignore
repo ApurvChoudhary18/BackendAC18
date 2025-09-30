@@ -31,3 +31,10 @@ backend/storage/
 .env.*
 client_secret*.json
 client_secret.json
+
+.env
+.env.bak
+.env.save
+.env.*
+client_secret*.json
+client_secret.json
